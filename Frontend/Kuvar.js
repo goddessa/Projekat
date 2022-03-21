@@ -286,7 +286,7 @@ export class Kuvar {
         }).then(resp => {
             if (resp.ok) {
 
-                alert("Korisnik dodat");
+                alert("Dodali ste korisnika!");
                 resp.json().then(r => {
                     this.korisnik = new Korisnik(r.id, r.ime, r.prezime);
                     this.odustani();
@@ -306,7 +306,7 @@ export class Kuvar {
         var sifra = host.querySelector(".passTxt").value.trim();
 
         if (email === "" || sifra === "") {
-            alert("Unesite sve podatke!");
+            alert("Niste uneli sve podatke!!");
             return;
         }
 
