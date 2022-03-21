@@ -3,7 +3,7 @@ import { Kuvar } from "./Kuvar.js";
 
 function createMainScreen() {
 //const fetchBegin = ("https://localhost:5500/Frontend/Korisnik")
-   const fetchBegin = "https://localhost:5001/Kuvar/Kuvari";
+   const fetchBegin = "https://localhost:5001/";
    
     let cont = document.createElement("div");
     cont.className = "screen";
@@ -13,14 +13,14 @@ function createMainScreen() {
     document.body.appendChild(cont);
 
     let l = document.createElement("h1");
-    l.innerHTML = "Izaberite kuvar";
+    l.innerHTML = "Dobrodošli, izaberite kuvar";
     mainDiv.appendChild(l);
 
     let kuvariDiv = document.createElement("div");
     kuvariDiv.className = "odabirKuvara";
     mainDiv.appendChild(kuvariDiv);
 
-    fetch(fetchBegin, { method: "GET" })
+    fetch(fetchBegin + "Kuvar/Kuvari", { method: "GET" })
         .then(resp => {
             if (resp.ok) {
                 resp.json().then(kuvari => {

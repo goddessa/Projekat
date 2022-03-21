@@ -48,7 +48,7 @@ export class Kuvar {
 
             l = document.createElement("label");
             l.className = "logLbl";
-            l.innerHTML = "Uloguj se";
+            l.innerHTML = "Ulogujte se";
             l.addEventListener("click", ev => {
                 this.cls();
                 this.ulogujSe();
@@ -57,7 +57,7 @@ export class Kuvar {
         } else {
 
             l.className = "LogoutLbl";
-            l.innerHTML = "Izloguj se";
+            l.innerHTML = "Izlogujte se";
             l.addEventListener("click", ev => {
                 this.cls();
                 this.korisnik = null;
@@ -132,7 +132,7 @@ export class Kuvar {
         div.classList.add("RegDiv");
 
         let lbl = document.createElement("label");
-        lbl.innerHTML = "Odustani";
+        lbl.innerHTML = "Vrati se nazad";
         lbl.addEventListener("click", ev => {
             this.odustani();
         });
@@ -147,7 +147,7 @@ export class Kuvar {
 
 
         lbl = document.createElement("label");
-        lbl.innerHTML = "Registruj se";
+        lbl.innerHTML = "Registrujte se";
         div.appendChild(lbl);
 
 
@@ -159,7 +159,7 @@ export class Kuvar {
 
         txtbx = document.createElement("input");
         txtbx.className = "prezimeTxt";
-        txtbx.placeholder = "Prezme";
+        txtbx.placeholder = "Prezime";
 
         div.appendChild(txtbx);
 
@@ -172,12 +172,12 @@ export class Kuvar {
         txtbx = document.createElement("input");
         txtbx.type = "password";
         txtbx.className = "passTxt";
-        txtbx.placeholder = "Lozinka";
+        txtbx.placeholder = "Vaša Lozinka";
 
         div.appendChild(txtbx);
 
         let btn = document.createElement("button");
-        btn.innerHTML = "Registruj se";
+        btn.innerHTML = "Registrujte se";
         btn.className = "RegBtn";
         btn.addEventListener("click", ev => {
             this.doRegister(div);
@@ -203,7 +203,7 @@ export class Kuvar {
         div.classList.add("RegDiv");
 
         let lbl = document.createElement("label");
-        lbl.innerHTML = "Odustani";
+        lbl.innerHTML = "Odustanite";
         lbl.addEventListener("click", ev => {
             this.odustani();
         });
@@ -218,7 +218,7 @@ export class Kuvar {
 
 
         lbl = document.createElement("label");
-        lbl.innerHTML = "Uloguj se";
+        lbl.innerHTML = "Ulogujte se";
         div.appendChild(lbl);
 
 
@@ -237,7 +237,7 @@ export class Kuvar {
         div.appendChild(txtbx);
 
         let btn = document.createElement("button");
-        btn.innerHTML = "Uloguj se";
+        btn.innerHTML = "Ulogujte se";
         btn.className = "RegBtn";
         btn.addEventListener("click", ev => {
             this.doLogin(div);
@@ -268,11 +268,11 @@ export class Kuvar {
 
         const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
         if (!email.match(emailRegex)) {
-            alert("Email loseg oblika!");
+            alert("Email nije dobar!");
             return;
         }
 
-        fetch(this.fetchBegin, {
+        fetch(this.fetchBegin + "Korisnik/DodajKorisnika/", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -286,7 +286,7 @@ export class Kuvar {
         }).then(resp => {
             if (resp.ok) {
 
-                alert("Dodali ste korisnika!");
+                alert("Novi korisnik je dodat, dobrodošli!");
                 resp.json().then(r => {
                     this.korisnik = new Korisnik(r.id, r.ime, r.prezime);
                     this.odustani();
@@ -315,7 +315,7 @@ export class Kuvar {
             alert("E-mail loseg oblika!");
             return;
         }
-        var link = this.fetchBegin;
+        var link = this.fetchBegin + "Korisnik/Login/";
         var encodedLink = link + encodeURIComponent(email) + "/" + encodeURIComponent(sifra);
         fetch(encodedLink, { method: "GET" })
             .then(resp => {
@@ -364,7 +364,7 @@ export class Kuvar {
         div.appendChild(serchBar);
 
         let btn = document.createElement("button");
-        btn.innerHTML = "Pretrazi";
+        btn.innerHTML = "Pretrazi recepte";
         btn.addEventListener("click", ev => {
             this.cls();
             if (div.querySelector(".searchBar") !== null) {
@@ -408,7 +408,7 @@ export class Kuvar {
 
     pretraziRecepte(naziv) {
         if (naziv.trim() === "") {
-            alert("Morate uneti neki tekst da bi mogli da pretrazujete!");
+            alert("Morate uneti tekst!");
             return;
         }
 
