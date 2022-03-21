@@ -588,7 +588,7 @@ export class Kuvar {
         btnDodajStvar = document.createElement("button");
         btnDodajStvar.className = "BtnDodajKorak";
         btnDodajStvar.style.order = 3;
-        btnDodajStvar.innerHTML = "Dodaj Korak"
+        btnDodajStvar.innerHTML = "Dodaj još jedan korak"
         btnDodajStvar.onclick = (ev) => {
             korak = new KorakDrawer();
             koraci.push(korak);
@@ -622,16 +622,16 @@ export class Kuvar {
             sastojci = sastojci.filter(e => e.deleted == false);
             var naziv = txtbx.value.trim();
             if (naziv.length === 0) {
-                alert("Recept mora imati naziv!");
+                alert("ZABORAVILI STE NAZIV!");
                 return;
             }
 
             if (sastojci.length === 0) {
-                alert("Morate uneti sastojke za recept!");
+                alert("ZABORAVILI STE SASTOJKE!");
                 return;
             }
             if (koraci.length === 0) {
-                alert("Recept mora imati barem jedan korak!");
+                alert("ZABORAVILI STE KORAKE");
                 return;
             }
 
@@ -671,7 +671,7 @@ export class Kuvar {
             body: body
         }).then(resp => {
             if (resp.ok) {
-                alert("Recept dodat!");
+                alert("DODALI STE NOVI RECEPT!");
             } else {
                 throw resp;
             }
@@ -700,7 +700,7 @@ export class Kuvar {
         var searchBar = host.querySelector(".searchBar");
         host.removeChild(searchBar);
         this.crtajCheckboxove(this.container);
-        btn.innerHTML = "Otkazi";
+        btn.innerHTML = "OTKAŽI DODAVANJE";
     }
 
 
@@ -726,7 +726,7 @@ export class Kuvar {
         let first = host.querySelector("button");
         host.insertBefore(searchBar, first);
 
-        btn.innerHTML = "Pretraga po sastojcima";
+        btn.innerHTML = "Po sastojcima";
     }
 
     crtajCheckboxove(host) {

@@ -37,7 +37,7 @@ export class Recept {
 
         el = document.createElement("td");
         let btn = document.createElement("button");
-        btn.innerHTML = "Pogledaj";
+        btn.innerHTML = "VIDI";
         btn.className = "PregledBtn";
 
         btn.onclick = (ev) => {
@@ -75,7 +75,7 @@ export class Recept {
         if (isMyRecept) {
             el = document.createElement("td");
             let btn = document.createElement("button");
-            btn.innerHTML = "Izmeni";
+            btn.innerHTML = "PROMENI";
             btn.className = "IzmeniBtn";
 
             btn.onclick = (ev) => {
@@ -96,7 +96,7 @@ export class Recept {
 
             el = document.createElement("td");
             btn = document.createElement("button");
-            btn.innerHTML = "Obrisi";
+            btn.innerHTML = "OBRIŠI";
             btn.className = "ObrisiBtn";
 
             btn.onclick = (ev) => {
@@ -163,7 +163,7 @@ export class Recept {
             div.appendChild(cmbbx);
 
             let btnOceni = document.createElement("button");
-            btnOceni.innerHTML = "Oceni";
+            btnOceni.innerHTML = "SVIĐA MI SE";
             btnOceni.onclick = (ev) => {
                 this.oceni(cmbbx.value);
             };
@@ -406,7 +406,7 @@ export class Recept {
 
                                         var naziv = txtbx.value.trim();
                                         if (naziv.length === 0) {
-                                            alert("Recept mora imati naziv!");
+                                            alert("ZABORAVILI STE NAZIV!");
                                             return;
                                         }
 
