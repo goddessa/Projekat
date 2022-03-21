@@ -488,7 +488,7 @@ export class Kuvar {
             tableHead.appendChild(tr);
 
             let th;
-            var zag = ["Naziv", "Ocena", "Korisnik", "", ""];
+            var zag = ["Naziv", "Sviđa mi se", "Korisnik", "", ""];
             if (!isMyRecepti)
                 zag.pop();
             zag.forEach(el => {

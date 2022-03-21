@@ -27,7 +27,7 @@ namespace Controllers {
 
          [Route("AddKuvar")]
           [HttpPost]
-          public async Task<ActionResult> DodajStudenta([FromBody] Kuvar kuvar) {
+          public async Task<ActionResult> DodajKuvar([FromBody] Kuvar kuvar) { //ipravi treba dodati kuvara
               try {
                   Context.Kuvari.Add(kuvar);
                   await Context.SaveChangesAsync();

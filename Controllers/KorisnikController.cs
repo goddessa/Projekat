@@ -26,7 +26,7 @@ namespace Controllers {
             var tmp = await Context.Korisnici.Where(k => k.Email == korisnik.Email).FirstOrDefaultAsync();
 
             if (tmp != null)
-                return BadRequest("Korisnik sa tim korisnickim imenom vec postoji!");
+                return BadRequest("Taj korisnik već postoji");
 
             try {
                 Context.Korisnici.Add(korisnik);
@@ -48,7 +48,7 @@ namespace Controllers {
                 var korisnik = await Context.Korisnici.Where(k => k.Email == email).FirstOrDefaultAsync();
 
                 if (korisnik == null)
-                    return BadRequest("Ne postoji korisnik sa tim korisnickim imenom!");
+                    return BadRequest("Taj korisnik ne postoji!");
 
                 Trace.WriteLine("" + korisnik.ID);
 
@@ -62,37 +62,7 @@ namespace Controllers {
 
         }
 
-
-        [Route("UpdatePass/{email}/{oldPass}/{newPass}")]
-        [HttpPut]
-        public async Task<ActionResult> PromeniPass(string email, string oldPass, string newPass) {
-            try {
-                var korisnik = await Context.Korisnici.Where(k => k.Email == email).FirstOrDefaultAsync();
-
-                if (korisnik == null)
-                    return BadRequest("Ne postoji korisnik sa tim korisnickim imenom!");
-
-                if (korisnik.Password != oldPass)
-                    return BadRequest("Pogresna sifra");
-
-
-                if (Regex.IsMatch(newPass, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,}$")) {
-                    korisnik.Password = newPass;
-                    //Context.Korisnici.Update(korisnik);
-                    await Context.SaveChangesAsync();
-
-                    return Ok("Sifra promenjena!");
-                }
-
-                return BadRequest("Nova sifra ne zadovoljava standard!");
-            } catch (Exception e) {
-                return BadRequest(e.Message);
-            }
-
-
-
-        }
-        [Route("Delete/{idKor}")]
+       /* [Route("Delete/{idKor}")]
         [HttpDelete]
         public async Task<ActionResult> IzbrisiKorisnika(int idKor) {
 
@@ -130,6 +100,7 @@ namespace Controllers {
  
 
         }
+        */
         
     }
 }
