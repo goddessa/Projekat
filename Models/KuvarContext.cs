@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+//ovde se nalaze DbSet svojstva (properties) koje su povezane sa svim klasama koje predstavljaju model za bazu podataka
 
 namespace Models {
 
@@ -18,7 +19,7 @@ namespace Models {
         public DbSet<ReceptOcena> Ocene { get; set; }
 
         public DbSet<ReceptSastojak> ReceptSastojak { get; set; }
-
+//kolekcije koje nam vraća baza
 
         public KuvarContext(DbContextOptions options) : base(options) {
 

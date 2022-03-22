@@ -21,7 +21,7 @@ html, body {
         flex-wrap: nowrap;
         align-items: center;
         justify-content: center;
-        font-family: "Garamond";
+        font-family: "Serif";
         background-image:url('image0.jpg');
         height: fit-content;
         width: fit-content;
@@ -58,7 +58,7 @@ html, body {
         margin-right: 15px;
         margin-top: 15px;
         color: rgb(22, 2, 41);
-        font-family: "Garamond";
+        font-family: "Serif";
         font-size: 20px;
     }
   
@@ -88,7 +88,7 @@ html, body {
         min-width:100px;	
         margin-left:15px;
         margin-right:15px;
-        font-family: Garamond;
+        font-family: "Serif";
         font-size: 150%;
     }
 
@@ -103,12 +103,12 @@ html, body {
         font-size: 110%;
         color: #0065a8;
         font-weight: bold;
-        font-family: Garamond;
+        font-family: Serif;
     }
 
     table, tr, th, td{
         
-        font-family: Garamond;
+        font-family: Serif;
         font-size: 150%;
         text-align:center;
         padding: 15px;
@@ -135,7 +135,7 @@ html, body {
         font-size: 150%;
         margin: 15px;
         color: #5AA9E6;
-        font-family: Garamond;
+        font-family: Serif;
     }
     
     .RegistracijaDiv{
@@ -152,7 +152,7 @@ html, body {
         margin: 15px;
         color: #041420;
         font-weight: bold;
-        font-family: Garamond;
+        font-family: Serif;
     }
 
     .RegistracijaDiv > input{
@@ -160,7 +160,7 @@ html, body {
         margin: 15px;
         color: #041420;
         font-weight: bold;
-        font-family: Garamond;
+        font-family: Serif;
     }
 
     
@@ -168,7 +168,7 @@ html, body {
         font-size: 150%;
         margin: 15px;
         font-weight: bold;
-        font-family: Garamond;
+        font-family: Serif;
     }
 
 
@@ -197,13 +197,13 @@ html, body {
     .ReceptShow>ul{
         font-size: 150%;
         color: #041420;
-        font-family: Garamond;
+        font-family: Serif;
     }
 
     .ReceptShow>ol>li, .ReceptShow>h3{
         font-size: 150%;
         color: #041420;
-        font-family: Garamond;
+        font-family: Serif;
     }
 
     .DodavanjeSastojciDiv{
@@ -218,7 +218,7 @@ html, body {
         margin: 15px;
         color: #041420;
         font-weight: bold;
-        font-family: Garamond;
+        font-family: Serif;
     }
 
     .DodavanjeNazivDiv>input{
@@ -227,7 +227,7 @@ html, body {
         margin: 15px;
         color:#041420;
         font-weight: bold;
-        font-family: Garamond;
+        font-family: Serif;
     }
 
     .BtnDodajSastojak{
@@ -235,7 +235,7 @@ html, body {
         margin: 15px;
         color: #041420;
         font-weight: bold;
-        font-family: Garamond;
+        font-family: Serif;
         width: 10%;
         min-width: 100px;
         margin-left: 15px;
@@ -253,7 +253,7 @@ html, body {
         margin: 15px;
         color: #041420;
         font-weight: bold;
-        font-family: Garamond;
+        font-family: Serif;
         margin: 15px;
         width: 100%;
         
@@ -271,7 +271,7 @@ html, body {
         margin: 15px;
         color: #3eb489;
         font-weight: bold;
-        font-family: Garamond;
+        font-family: Serif;
         width: 10%;
         min-width: 100px;
         margin-left: 15px;

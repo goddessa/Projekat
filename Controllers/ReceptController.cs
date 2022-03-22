@@ -57,13 +57,13 @@ namespace Controllers {
                     .FirstOrDefaultAsync();
 
                 if (tmp != null)
-                    return BadRequest("Vec imate recept sa istim imenom!");
+                    return BadRequest("POSTOJI OVAKAV RECEPT!");
 
 
                 var korisnik = await Context.Korisnici.Where(k => k.ID == helper.korisnikID).FirstOrDefaultAsync();
 
                 if (korisnik == null)
-                    return BadRequest("Korisnik nije pronadjen!");
+                    return BadRequest("KORISNIK NIJE NADJEN!");
 
                 var kuvar = await Context.Kuvari.Where(k => k.ID == helper.kuvarId).FirstOrDefaultAsync();
 
@@ -112,7 +112,7 @@ namespace Controllers {
 
 
                 await Context.SaveChangesAsync();
-                return Ok("Recept je dodat" + helper.naziv);
+                return Ok("Uspešno ste dodali recept" + helper.naziv);
             } catch (Exception e) {
                 return BadRequest(e.Message);
             }
@@ -134,7 +134,7 @@ namespace Controllers {
                 var korisnik = await Context.Korisnici.Where(k => k.ID == helper.korisnikID).FirstOrDefaultAsync();
 
                 if (korisnik == null)
-                    return BadRequest("Korisnik nije pronadjen!");
+                    return BadRequest("KORISNIK NIJE NADJEN!");
 
                 var kuvar = await Context.Kuvari.Where(k => k.ID == helper.kuvarId).FirstOrDefaultAsync();
 
@@ -251,7 +251,7 @@ namespace Controllers {
                 var recept = await Context.Recepti.FindAsync(idRecept);
 
                 if (recept == null)
-                    return BadRequest("Recept nije pronadjen.");
+                    return BadRequest("RECEPT NE POSTOJI.");
 
                 var satojci = await Context.ReceptSastojak.Where(rs => rs.Recept.ID == idRecept).ToListAsync();
                 foreach (var s in satojci)
@@ -269,7 +269,7 @@ namespace Controllers {
 
                 await Context.SaveChangesAsync();
 
-                return Ok("Recept obrisan!");
+                return Ok("USPEŠNO JE OBRISAN RECEPT IZ KUVARA!");
 
             } catch (Exception e) {
                 return BadRequest(e.Message);

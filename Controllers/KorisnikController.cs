@@ -62,6 +62,8 @@ namespace Controllers {
 
         }
 
+
+//za vežbu
        /* [Route("Delete/{idKor}")]
         [HttpDelete]
         public async Task<ActionResult> IzbrisiKorisnika(int idKor) {

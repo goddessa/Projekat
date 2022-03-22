@@ -45,7 +45,7 @@ namespace Controllers {
                     .FirstOrDefaultAsync();
 
                 if (tmp != null)
-                    return BadRequest("Za ovaj recept je vec unet taj sastojak!");
+                    return BadRequest("OVO STE VEĆ UNELI!");
 
 
 
@@ -57,7 +57,7 @@ namespace Controllers {
                 });
                 await Context.SaveChangesAsync();
 
-                return Ok("Sastojak dodat u recept");
+                return Ok("DODAT SASTOJAK");
 
             } catch (Exception e) {
                 return BadRequest(e.Message);
@@ -102,7 +102,7 @@ namespace Controllers {
                 Context.ReceptSastojak.Update(receptSastojak);
                 await Context.SaveChangesAsync();
 
-                return Ok("Sastojak za recept promenjen");
+                return Ok("PROMENILI STE SASTOJAK");
             } catch (Exception e) {
                 return BadRequest(e.Message);
             }
@@ -145,7 +145,7 @@ namespace Controllers {
 
                 await Context.SaveChangesAsync();
 
-                return Ok("Sastojak uklonjen iz recepta!");
+                return Ok("UKLONILI STE SASTOJAK!");
             } catch (Exception e) {
                 return BadRequest(e.Message);
             }

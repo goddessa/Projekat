@@ -3,7 +3,7 @@ import { Kuvar } from "./Kuvar.js";
 
 function createMainScreen() {
 //const fetchBegin = ("https://localhost:5500/Frontend/Korisnik")
-   const fetchBegin = "https://localhost:5001/";
+   const fetchBegin = "https://localhost:5001/"; //putokaz ka svim kontrolerima
    
     let cont = document.createElement("div");
     cont.className = "screen";
@@ -20,7 +20,7 @@ function createMainScreen() {
     kuvariDiv.className = "odabirKuvara";
     mainDiv.appendChild(kuvariDiv);
 
-    fetch(fetchBegin + "Kuvar/Kuvari", { method: "GET" })
+    fetch(fetchBegin + "Kuvar/Kuvari", { method: "GET" }) //zovemo kuvare koje imamo za prikaz
         .then(resp => {
             if (resp.ok) {
                 resp.json().then(kuvari => {
